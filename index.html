@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TriPlan</title>
+        <!--Import Google Icon Font-->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+        <script src="https://use.fontawesome.com/9d34629224.js"></script>
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>          
+    </head>
+    <body>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo">&nbsp;TriPlan</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="mytrips">My trips</a></li>
+                    <li><a href="following"><i class="fa fa-heart" aria-hidden="true"></i> Following</a></li>
+                    <li><a href="login"><i class="fa fa-user" aria-hidden="true"></i> Login</a></li>
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a href="mytrips">My trips</a></li>
+                    <li><a href="following">Following</a></li>
+                    <li><a href="login"><i class="fa fa-user" aria-hidden="true"></i> Login</a></li>
+                </ul>
+            </div>
+        </nav>
+        <p class="center-align">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s3 offset-s3">
+                        <i class="fa fa-search material-icons prefix" aria-hidden="true"></i>
+                        <input id="icon_prefix" type="text" class="validate">
+                        <label for="icon_prefix">search for my next trip</label>
+                    </div>
+                    <div class="input-field col s1">
+                        OR
+                    </div>
+                    <div class="input-field col s2">
+                        <a class="waves-effect waves-light btn" href="create.html">create my trip  <i class="fa fa-sun-o" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </form>
+        </p>
+        <style>
+            .google-maps {
+                position: relative;
+                padding-bottom: 75%;
+                height: 0;
+                overflow: hidden;
+            }
+            .google-maps iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100% !important;
+                height: 100% !important;
+            }
+        </style>
+        <div class="row">
+            <div class="col s10 .google-maps">
+                <iframe
+                width="1300"
+                height="400"
+                frameborder="0" style="border:0"
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAQue_OuzbWSlCn0O-M_2mo5-9UzuAzsA8
+                    &q=Paris&zoom=5&maptype=satellite" allowfullscreen>
+                </iframe>
+            </div>
+            <div class="col s2">
+                <ul class="collection with-header">
+                    <li class="collection-header"><h4>Figures</h4></li>
+                    <li class="collection-item"><i class="fa fa-globe" aria-hidden="true"></i> 220 countries</li>
+                    <li class="collection-item"><i class="fa fa-user" aria-hidden="true"></i> 500 000 users</li>
+                    <li class="collection-item"><i class="fa fa-comment" aria-hidden="true"></i> 1.5 millions comments</li>
+                </ul>
+            </div>
+        </div>
+        <p class="center-align">
+            <h3>&nbsp;recent trips</h3><hr style="width: 98%" />
+        </p>
+        
+        <div class="row">
+            <div class="col s3">
+                <div class="card hoverable">
+                    <div class="card-image">
+                        <img src="img/bali.jpg">
+                        <span class="card-title">Bali  
+                            <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <div class="card-content">
+                        <p class="right-align"><i class="fa fa-clock-o" aria-hidden="true"></i> 10 days ago</p>
+                        <p>Bali in 10 days for surf lessons.</p>                                               
+                    </div>
+                    <div class="card-action">
+                        <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> 23</a><a href="#"><i class="fa fa-comment" aria-hidden="true"></i> 4</a>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col s3">
+                <div class="card hoverable">
+                    <div class="card-image">
+                        <img src="img/london.png">
+                        <span class="card-title">London  
+                            <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <div class="card-content">
+                        <p class="right-align"><i class="fa fa-clock-o" aria-hidden="true"></i> 10 days ago</p>
+                        <p>Time to go shopping.</p>                                               
+                    </div>
+                    <div class="card-action">
+                        <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> 155</a><a href="#"><i class="fa fa-comment" aria-hidden="true"></i> 25</a>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col s3">
+                <div class="card hoverable">
+                    <div class="card-image">
+                        <img src="img/usa.jpg">
+                        <span class="card-title">USA  
+                            <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <div class="card-content">
+                        <p class="right-align"><i class="fa fa-clock-o" aria-hidden="true"></i> 10 days ago</p>
+                        <p>Have the trip of your life in the west USA.</p>                                               
+                    </div>
+                    <div class="card-action">
+                        <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> 18</a><a href="#"><i class="fa fa-comment" aria-hidden="true"></i> 10</a>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col s3">
+                <div class="card hoverable">
+                    <div class="card-image">
+                        <img src="img/paris.jpg">
+                        <span class="card-title">France  
+                            <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <div class="card-content">
+                        <p class="right-align"><i class="fa fa-clock-o" aria-hidden="true"></i> 10 days ago</p>
+                        <p>Cultural trip for food and sightseeing.</p>                                               
+                    </div>
+                    <div class="card-action">
+                        <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> 20</a><a href="#"><i class="fa fa-comment" aria-hidden="true"></i> 5</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">TriPlan</h5>
+                <p class="grey-text text-lighten-4">Plan your trip and share it.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Legals</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Terms and conditions</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Privacy</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+                © 2017 TriPlan
+            </div>
+          </div>
+        </footer>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    </body>
+</html>

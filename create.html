@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TriPlan</title>
+        <!--Import Google Icon Font-->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+        <script src="https://use.fontawesome.com/9d34629224.js"></script>
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>          
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+		<style>
+			.search {
+				
+				margin: 0 auto 0 200px;
+				width:400px;
+			}
+			#search {
+				height: 32px !important; /* or height of nav */
+				background-color:white;
+				color:black;
+			}
+            #flight-card .flight-card-title{margin:0;font-weight:300;color:#fff}#flight-card .flight-card-date{font-size:1.0rem;margin:0;color:#fff}#flight-card .flight-state{padding-bottom:15px}#flight-card .flight-state-two{border-left:1px dashed #9e9e9e}#flight-card .flight-icon{font-size:2.2rem;display:block;-webkit-transform:rotate(90deg);-moz-transform:rotate(90deg);-ms-transform:rotate(90deg);-o-transform:rotate(90deg)}#flight-card .card-content-bg{background:url("img/usa.jpg") no-repeat center center;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover}#flight-card .card-content{background:rgba(0,0,0,0.25)}#flight-card .flight-state-wrapper{margin:0 0 100px 0 !important}#flight-card .card-header .card-title{padding:20px}
+
+            .mcard .mcard-card-title{margin:0;font-weight:300;}.mcard .card-header .card-title{padding:20px}.mcard .card-content{background:rgba(0,0,0,0)}.mcard .mcard-card-date{font-size:1.0rem;margin:0;color:#fff}
+
+            #task-card label{display:block;color:rgba(0,0,0,0.87);height:auto}#task-card .task-card-title{margin:0;color:#fff;font-weight:300}#task-card .task-card-date{font-size:1.0rem;margin:0;color:#fff}#task-card .collection-header{padding:20px}#task-card .task-add{position:absolute;right:10px;top:76px}#task-card .task-cat{padding:2px 4px;color:#fff;margin-left:37px;font-weight:300;font-size:0.8rem;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;background-clip:padding-box}.task-cat{padding:2px 4px;color:#fff;font-weight:300;font-size:0.8rem;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;background-clip:padding-box}.collection .collection-item.avatar i.circle{font-size:28px}
+        </style>
+    </head>
+    <body>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="index.html" class="brand-logo">&nbsp;TriPlan</a>
+				
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+				<ul class="search hide-on-med-and-down"><li>
+					<div class="input-field">
+						<i class="material-icons prefix">search</i>
+						<input id="search" type="text" class="header-search-input" required>
+					</div></li>
+				</ul>
+                <ul class="right hide-on-med-and-down">					
+                    <li><a href="mytrips">My trips</a></li>
+                    <li><a href="following"><i class="fa fa-heart" aria-hidden="true"></i> Following</a></li>
+                    <li><a href="login"><i class="fa fa-user" aria-hidden="true"></i> Login</a></li>
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a href="mytrips">My trips</a></li>
+                    <li><a href="following">Following</a></li>
+                    <li><a href="login"><i class="fa fa-user" aria-hidden="true"></i> Login</a></li>
+                </ul>
+				
+            </div>
+        </nav>
+       
+        <div class="row">
+            <div class="col s12">
+                <h4>My trip to Bali</h4>
+                <div class="chip"><a href="" class="black-text"><img src="img/avatar.gif" border="0" /> <i class="fa fa-certificate" aria-hidden="true"></i> alex</a></div>  <a href="">3 trips</a> 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s2">
+                <div class="card blue" style="height: 110px">
+                    <div class="card-content white-text center-align">
+                        <p class="card-title">
+                            <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i>
+                        </p>
+                        <p>  
+                            <a href="" class="white-text">15 reviews</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s2">
+                <div class="card amber" style="height: 110px">
+                    <div class="card-content white-text center-align">
+                        <p class="card-title"><i class="fa fa-calendar" aria-hidden="true"></i> 15 to 25 april</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s2">
+                <div class="card amber" style="height: 110px">
+                    <div class="card-content white-text center-align">
+                        <p class="card-title">suitable for</p>
+                        <p><i class="fa fa-users" aria-hidden="true"></i> 2 to 4 people</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s2">
+                <div class="card amber" style="height: 110px">
+                    <div class="card-content white-text center-align">
+                        <p class="card-title"><i class="fa fa-heart" aria-hidden="true"></i> 150 followers</p>
+                        <p><a href="" class="white-text"><i class="fa fa-plus" aria-hidden="true"></i> count me in</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s2">
+                <div class="card orange" style="height: 110px">
+                    <div class="card-content white-text center-align">
+                        <p class="card-title"><i class="fa fa-comments" aria-hidden="true"></i> 15 comments</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">  
+            <div class="col s12">
+                <nav>
+                    <div class="nav-wrapper">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i> follow</a></li>
+                            <li><a href="#"><i class="fa fa-share" aria-hidden="true"></i> share</a></li>
+                            <li><a href="#"><i class="fa fa-clone" aria-hidden="true"></i> copy to my space</a></li>
+                            <li><a href="#"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> alert</a></li>
+                            <li><a href="#"><i class="fa fa-pencil" aria-hidden="true"></i> edit</a></li>
+                            <li><a href="#"><i class="fa fa-trash" aria-hidden="true"></i> delete</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s9">
+                <div class="card-panel teal">
+                    <h4 class="white-text"><i class="fa fa-comment-o" aria-hidden="true"></i></h4>
+                    <span class="white-text">
+                        We plan a very simple and cool trip from London to San Francisco for two to discover the place. It's our first time.
+                    </span><br /><br />
+                    <div class="chip">#USA<i class="close material-icons">close</i></div><div class="chip">#TripFor2<i class="close material-icons">close</i></div><div class="chip">#WeekEnd<i class="close material-icons">close</i></div>  <div class="chip">#NoStress<i class="close material-icons">close</i></div>          
+                </div>
+
+                <div class="card mcard bordered">
+                    <div class="card-header green">
+                        <div class="card-title white-text">
+                            <h5 class="mcard-card-title"><i class="fa fa-map-signs" aria-hidden="true"></i> itinerary</h5>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <a class="waves-effect waves-light btn"><i class="fa fa-map-marker" aria-hidden="true"></i> add a place</a>
+                    </div>
+                    <iframe
+                    width="100%" height="350" style="margin-bottom: -6px;border:0"
+                    frameborder="0"
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAQue_OuzbWSlCn0O-M_2mo5-9UzuAzsA8
+                        &q=Paris&zoom=5&maptype=satellite" allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="card mcard bordered">
+                    <div class="card-header yellow">
+                        <div class="card-title white-text">
+                            <h5 class="mcard-card-title"><i class="fa fa-calendar" aria-hidden="true"></i> planning</h5>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <table class="table bordered">
+                            <thead>
+                                <tr>
+                                    <th>day</th>
+                                    <th>activity</th>
+                                    <th><i class="fa fa-chevron-down" aria-hidden="true"></i> type</th>
+                                    <th>price</th>
+                                    <th>actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th rowspan="6">day 1</th>
+                                    <td>Golden gate</td>
+                                    <td><i class="fa fa-binoculars" aria-hidden="true"></i> visit</td>
+                                    <td>9.00 $</td>
+                                    <td><i class="fa fa-arrow-up" aria-hidden="true"></i> <i class="fa fa-arrow-down" aria-hidden="true"></i> <i class="fa fa-pencil" aria-hidden="true"></i> <i class="fa fa-trash" aria-hidden="true"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Mickey's</td>
+                                    <td><i class="fa fa-cutlery" aria-hidden="true"></i> restaurant</td>
+                                    <td>11.00 $ / person</td>
+                                    <td><i class="fa fa-arrow-up" aria-hidden="true"></i> <i class="fa fa-arrow-down" aria-hidden="true"></i> <i class="fa fa-pencil" aria-hidden="true"></i> <i class="fa fa-trash" aria-hidden="true"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Alcatraz</td>
+                                    <td><i class="fa fa-binoculars" aria-hidden="true"></i> visit</td>
+                                    <td>13.00 $ / person</td>
+                                    <td><i class="fa fa-arrow-up" aria-hidden="true"></i> <i class="fa fa-arrow-down" aria-hidden="true"></i> <i class="fa fa-pencil" aria-hidden="true"></i> <i class="fa fa-trash" aria-hidden="true"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Minnie's</td>
+                                    <td><i class="fa fa-cutlery" aria-hidden="true"></i> restaurant</td>
+                                    <td>18.95 $ / person</td>
+                                    <td><i class="fa fa-arrow-up" aria-hidden="true"></i> <i class="fa fa-arrow-down" aria-hidden="true"></i> <i class="fa fa-pencil" aria-hidden="true"></i> <i class="fa fa-trash" aria-hidden="true"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Bellagio</td>
+                                    <td><i class="fa fa-bed" aria-hidden="true"></i> hotel</td>
+                                    <td>158.00 $</td>
+                                    <td><i class="fa fa-arrow-up" aria-hidden="true"></i> <i class="fa fa-arrow-down" aria-hidden="true"></i> <i class="fa fa-pencil" aria-hidden="true"></i> <i class="fa fa-trash" aria-hidden="true"></i></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align: right;font-weight: bold">Total</td>
+                                    <td>252.90 $</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th rowspan="3">day 2</th>
+                                    <td>Boat</td>
+                                    <td><i class="fa fa-binoculars" aria-hidden="true"></i> visit</td>
+                                    <td>10.00 $ / person</td>
+                                    <td><i class="fa fa-arrow-up" aria-hidden="true"></i> <i class="fa fa-arrow-down" aria-hidden="true"></i> <i class="fa fa-pencil" aria-hidden="true"></i> <i class="fa fa-trash" aria-hidden="true"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Donald's</td>
+                                    <td><i class="fa fa-cutlery" aria-hidden="true"></i> restaurant</td>
+                                    <td>30.00 $ / person</td>
+                                    <td><i class="fa fa-arrow-up" aria-hidden="true"></i> <i class="fa fa-arrow-down" aria-hidden="true"></i> <i class="fa fa-pencil" aria-hidden="true"></i> <i class="fa fa-trash" aria-hidden="true"></i></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align: right;font-weight: bold">Total</td>
+                                    <td>80 $</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="disqus_thread"></div>
+                    <script>
+
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    
+                    var disqus_config = function () {
+                    this.page.url = '/create';  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = 'create251287456'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://triplan-1.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                                
+            </div>
+            <div class="col s3">
+                <ul id="task-card" class="collection with-header">
+                    <li class="collection-header cyan">
+                        <h4 class="task-card-title">TODO</h4>
+                        <p class="task-card-date">March 26, 2015</p>
+                    </li>
+                    <li class="collection-item dismissable">
+                        <input type="checkbox" id="task1" />
+                        <label for="task1">Finish day 2 plan <a href="#" class="secondary-content"><span class="ultra-small">Today</span></a>
+                        </label>
+                        <span class="task-cat teal">Plan</span>
+                    </li>
+                    <li class="collection-item dismissable">
+                        <input type="checkbox" id="task2" />
+                        <label for="task2">Send budget to Tom <a href="#" class="secondary-content"><span class="ultra-small">Monday</span></a>
+                        </label>
+                        <span class="task-cat purple">Budget</span>
+                    </li>
+                    <li class="collection-item dismissable">
+                        <input type="checkbox" id="task3" checked="checked" />
+                        <label for="task3">Finish day one. <a href="#" class="secondary-content"><span class="ultra-small">Wednesday</span></a>
+                        </label>
+                        <span class="task-cat teal">Plan</span>
+                    </li>
+                    <li class="collection-item dismissable">
+                        <input type="checkbox" id="task4" disabled="disabled" />
+                        <label for="task4">I did it !</label>
+                        <span class="task-cat cyan">Enjoy</span>
+                    </li>
+                </ul>
+                <div id="flight-card" class="card">
+                    <div class="card-header amber darken-2">
+                        <div class="card-title">
+                            <h4 class="flight-card-title">Flight</h4>
+                            <p class="flight-card-date">June 18, Thu 04:50</p>
+                        </div>
+                    </div>
+                    <div class="card-content-bg white-text">
+                        <div class="card-content">
+                            <div class="row flight-state-wrapper">
+                                <div class="col s5 m5 l5 center-align">
+                                    <div class="flight-state">
+                                        <h4 class="margin">LDN</h4>
+                                        <p class="ultra-small">London</p>
+                                    </div>
+                                </div>
+                                <div class="col s2 m2 l2 center-align">
+                                    <i class="mdi-device-airplanemode-on flight-icon"></i>
+                                </div>
+                                <div class="col s5 m5 l5 center-align">
+                                    <div class="flight-state">
+                                        <h4 class="margin">SFO</h4>
+                                        <p class="ultra-small">San Francisco</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s6 m6 l6 center-align">
+                                    <div class="flight-info">
+                                        <p class="small"><span class="grey-text text-lighten-4">Depart:</span> 04.50</p>
+                                        <p class="small"><span class="grey-text text-lighten-4">Flight:</span> IB 5786</p>
+                                        <p class="small"><span class="grey-text text-lighten-4">Terminal:</span> B</p>
+                                    </div>
+                                </div>
+                                <div class="col s6 m6 l6 center-align flight-state-two">
+                                    <div class="flight-info">
+                                        <p class="small"><span class="grey-text text-lighten-4">Arrive:</span> 08.50</p>
+                                        <p class="small"><span class="grey-text text-lighten-4">Flight:</span> IB 5786</p>
+                                        <p class="small"><span class="grey-text text-lighten-4">Terminal:</span> C</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+                <div class="card mcard">
+                    <div class="card-header red">
+                        <div class="card-title white-text">
+                            <h4 class="mcard-card-title">weather</h4>
+                            <p class="mcard-card-date">statistics</p>
+                        </div>
+                    </div>
+                    <div class="card-content">                        
+                        <canvas id="myChart" width="400" height="180"></canvas>
+                        <script>
+                            var ctx = document.getElementById("myChart");
+                            var myChart = new Chart(ctx, {
+                                type: 'bar',
+                                data: {
+                                    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+                                    datasets: [{
+                                        type:'bar',
+                                        label: 'Rain in mm',
+                                        data: [10, 13, 3, 15, 10, 25],
+                                        backgroundColor: [
+                                            'rgba(255, 99, 132, 0.2)',
+                                            'rgba(54, 162, 235, 0.2)',
+                                            'rgba(255, 206, 86, 0.2)',
+                                            'rgba(75, 192, 192, 0.2)',
+                                            'rgba(153, 102, 255, 0.2)',
+                                            'rgba(255, 159, 64, 0.2)'
+                                        ],
+                                        borderColor: [
+                                            'rgba(255,99,132,1)',
+                                            'rgba(54, 162, 235, 1)',
+                                            'rgba(255, 206, 86, 1)',
+                                            'rgba(75, 192, 192, 1)',
+                                            'rgba(153, 102, 255, 1)',
+                                            'rgba(255, 159, 64, 1)'
+                                        ],
+                                        borderWidth: 1
+                                    }, 
+                                    {
+                                        type:'line',
+                                        data:[25,28,30,22,18,15],
+                                        label:'temp in celsius'
+                                    }]
+                                },
+                                options: {
+                                    scales: {
+                                        yAxes: [{
+                                            ticks: {
+                                                beginAtZero:true
+                                            }
+                                        }]
+                                    }
+                                }
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">TriPlan</h5>
+                <p class="grey-text text-lighten-4">Plan your trip and share it.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Legals</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Terms and conditions</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Privacy</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+                &copy; 2017 TriPlan
+            </div>
+          </div>
+        </footer>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    </body>
+</html>
